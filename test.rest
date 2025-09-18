@@ -56,22 +56,10 @@
 
 
 
-PUT http://localhost:8000/api/posts/1
-Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
-Content-Type: multipart/form-data; boundary=boundary
+# PUT http://localhost:8000/api/posts/1
+# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+# Content-Type: multipart/form-data
 
---boundary
-Content-Disposition: form-data; name="title"
-
-Post 1 Updated
---boundary
-Content-Disposition: form-data; name="description"
-
-Here is the post 1 updated
---boundary
-Content-Disposition: form-data; name="image"; filename="vectjpeg.jpg"
-Content-Type: image/jpeg
-
-< C:/Users/ADMIN/Downloads/vectjpeg.jpg
---boundary--
-
+# title=New title Post 1
+# description=Here is the updated post 1
+# image=@"C:/Users/ADMIN/Downloads/vectjpeg.jpg";type=image/jpeg

@@ -1,0 +1,77 @@
+# POST http://localhost:8000/api/signup
+# Content-Type: application/json
+
+# {
+# "name" : "sumit",
+# "email": "sumit@gmail.com",
+# "password" : "123456"
+# }
+
+# POST http://localhost:8000/api/login
+# Content-Type: application/json
+
+# {
+# "email": "sumit@gmail.com",
+# "password" : "123456"
+# }
+
+# POST http://localhost:8000/api/logout
+# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+
+# __________________Post______________________
+
+
+# GET http://localhost:8000/api/posts
+# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+
+# POST http://localhost:8000/api/posts
+# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+# Content-Type: multipart/form-data; boundary=boundary
+
+# --boundary
+# Content-Disposition: form-data; name="title"
+
+# Post 1
+# --boundary
+# Content-Disposition: form-data; name="description"
+
+# Here is the post 1
+# --boundary
+# Content-Disposition: form-data; name="image"; filename="vectjpeg.jpg"
+# Content-Type: image/jpeg
+
+# < C:/Users/ADMIN/Downloads/vectjpeg.jpg
+# --boundary--
+
+
+
+
+
+# GET http://localhost:8000/api/posts/1
+# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+
+
+
+
+
+
+
+PUT http://localhost:8000/api/posts/1
+Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+Post 1 Updated
+--boundary
+Content-Disposition: form-data; name="description"
+
+Here is the post 1 updated
+--boundary
+Content-Disposition: form-data; name="image"; filename="vectjpeg.jpg"
+Content-Type: image/jpeg
+
+< C:/Users/ADMIN/Downloads/vectjpeg.jpg
+--boundary--
+

@@ -22,10 +22,10 @@
 
 
 # GET http://localhost:8000/api/posts
-# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+# Authorization: Bearer 1|vDsdkpV9e9NwTkSVkTLj1E1NuRihsQ7Cn4YsN7LRd01ae349
 
 # POST http://localhost:8000/api/posts
-# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+# Authorization: Bearer 1|vDsdkpV9e9NwTkSVkTLj1E1NuRihsQ7Cn4YsN7LRd01ae349
 # Content-Type: multipart/form-data; boundary=boundary
 
 # --boundary
@@ -48,18 +48,40 @@
 
 
 # GET http://localhost:8000/api/posts/1
-# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
+# Authorization: Bearer 1|vDsdkpV9e9NwTkSVkTLj1E1NuRihsQ7Cn4YsN7LRd01ae349
 
 
 
 
 
+@hostname =  http://localhost:8000/api/posts
 
+POST {{hostname}}/1
+Authorization: Bearer 1|vDsdkpV9e9NwTkSVkTLj1E1NuRihsQ7Cn4YsN7LRd01ae349
+Content-Type: multipart/form-data; boundary=boundary
 
-# PUT http://localhost:8000/api/posts/1
-# Authorization: Bearer 4|szv7bXY7cl4KoUAp9lMK3SQhHGT8TK1HcMgd6AN9f55380e6
-# Content-Type: multipart/form-data
+--boundary
+Content-Disposition: form-data; name="title"
 
-# title=New title Post 1
-# description=Here is the updated post 1
-# image=@"C:/Users/ADMIN/Downloads/vectjpeg.jpg";type=image/jpeg
+Updated Post 1
+--boundary
+Content-Disposition: form-data; name="description"
+
+Here is the post 1 Updated
+--boundary
+Content-Disposition: form-data; name="image"; filename="1.jpg"
+Content-Type: image/jpeg
+
+< E:/SOFTWARE/1.jpg
+--boundary
+Content-Disposition: form-data; name="_method"
+
+PUT
+--boundary--
+
+# curl -X POST http://localhost:8000/api/posts/1 \
+#   -H "Authorization: Bearer Bearer 1|vDsdkpV9e9NwTkSVkTLj1E1NuRihsQ7Cn4YsN7LRd01ae349" \
+#   -F "title=Updated Post 1" \
+#   -F "description=Here is the post 1 Updated" \
+#   -F "image=@E:/SOFTWARE/1.jpg" \
+#   -F "_method=PUT"
